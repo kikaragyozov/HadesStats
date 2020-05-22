@@ -36,7 +36,7 @@ namespace HadesStats
             using var writer = File.Open(dataFile, FileMode.OpenOrCreate, FileAccess.Write, FileShare.Read);
             if (printWelcome)
             {
-                WriteLine($"Welcome to Hades Stats! A program to help you track your personal stats to the game \"Hades\", made by Supergiant Games.{NewLine}To begin writing your stats, use the following input commands:{NewLine}F or 1 - You did not finish Tartarus.{NewLine}T or 2 - You finished Tartarus.{NewLine}A or 3 - You finished Asphodel.{NewLine}E or 4 - You finished Elysium.{NewLine}I or 5 - You finished the Temple of Styx.{NewLine}GG or 6 - You won the run.{NewLine}{NewLine}{NewLine}Write exactly \"OK\" to hide this forever and get to recording your special stats!{NewLine}");
+                WriteLine($"Welcome to Hades Stats! A program to help you track your personal stats to the game \"Hades\", made by Supergiant Games.{NewLine}To begin writing your stats, use the following input commands:{NewLine}F or 1 - You did not finish Tartarus.{NewLine}T or 2 - You finished Tartarus.{NewLine}A or 3 - You finished Asphodel.{NewLine}E or 4 - You finished Elysium.{NewLine}S or 5 - You finished the Temple of Styx.{NewLine}GG or 6 - You won the run.{NewLine}{NewLine}{NewLine}Write exactly \"OK\" to hide this forever and get to recording your special stats!{NewLine}");
                 while (ReadLine() != "OK") ;
                 printWelcome = false;
                 WriteCurrentDataToFile();
@@ -52,7 +52,7 @@ namespace HadesStats
                 string b when b is "2" || b is "T" => SaveStats(1),
                 string c when c is "3" || c is "A" => SaveStats(2),
                 string d when d is "4" || d is "E" => SaveStats(3),
-                string e when e is "5" || e is "I" => SaveStats(4),
+                string e when e is "5" || e is "S" => SaveStats(4),
                 string f when f is "6" || f is "GG" => SaveStats(5),
                 _ => true
             }) ;
