@@ -66,9 +66,7 @@ namespace HadesStats
             bool SaveStats(int statIndex)
             {
                 if (statIndex == 0)
-                {
                     stats[0]++;
-                }
                 else for (int i = 1; i <= statIndex; i++)
                     stats[i]++;
                 stats[^1]++;
