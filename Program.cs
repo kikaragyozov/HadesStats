@@ -36,7 +36,7 @@ namespace HadesStats
             using var writer = File.Open(dataFile, FileMode.OpenOrCreate, FileAccess.Write, FileShare.Read);
             if (printWelcome)
             {
-                WriteLine($"Welcome to Hades Stats! A program to help you track your personal stats to the game \"Hades\", made by Supergiant Games.{NewLine}To begin writing your stats, use the following input commands:{NewLine}F or 1 - You did not finish Tartarus.{NewLine}T or 2 - You finished Tartarus.{NewLine}A or 3 - You finished Asphodel.{NewLine}E or 4 - You finished Elysium.{NewLine}I or 5 - You finished the introspection.{NewLine}GG or 6 - You won the run.{NewLine}{NewLine}{NewLine}Write exactly \"OK\" to hide this forever and get to recording your special stats!{NewLine}");
+                WriteLine($"Welcome to Hades Stats! A program to help you track your personal stats to the game \"Hades\", made by Supergiant Games.{NewLine}To begin writing your stats, use the following input commands:{NewLine}F or 1 - You did not finish Tartarus.{NewLine}T or 2 - You finished Tartarus.{NewLine}A or 3 - You finished Asphodel.{NewLine}E or 4 - You finished Elysium.{NewLine}I or 5 - You finished the Temple of Styx.{NewLine}GG or 6 - You won the run.{NewLine}{NewLine}{NewLine}Write exactly \"OK\" to hide this forever and get to recording your special stats!{NewLine}");
                 while (ReadLine() != "OK") ;
                 printWelcome = false;
                 WriteCurrentDataToFile();
@@ -45,7 +45,7 @@ namespace HadesStats
 
         printMe:
 
-            WriteLine($"Did not finish Tartarus: {Calculate(0):0.##}% of runs.{NewLine}Finished Tartarus: {Calculate(1):0.##}% of runs.{NewLine}Finished Asphodel: {Calculate(2):0.##}% of runs.{NewLine}Finished Elysium: {Calculate(3):0.##}% of runs.{NewLine}Finished Introspection: {Calculate(4):0.##}% of runs.{NewLine}Won the game: {Calculate(5):0.##}% of runs.{NewLine}{NewLine}Total recorded runs: {stats[^1]}.");
+            WriteLine($"Did not finish Tartarus: {Calculate(0):0.##}% of runs.{NewLine}Finished Tartarus: {Calculate(1):0.##}% of runs.{NewLine}Finished Asphodel: {Calculate(2):0.##}% of runs.{NewLine}Finished Elysium: {Calculate(3):0.##}% of runs.{NewLine}Finished Temple of Styx: {Calculate(4):0.##}% of runs.{NewLine}Won the game: {Calculate(5):0.##}% of runs.{NewLine}{NewLine}Total recorded runs: {stats[^1]}.");
             while (ReadLine() switch
             {
                 string a when a is "1" || a is "F" => SaveStats(0),
