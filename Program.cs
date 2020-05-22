@@ -48,12 +48,12 @@ namespace HadesStats
             WriteLine($"Did not finish Tartarus: {Calculate(0):0.##}% of runs.{NewLine}Finished Tartarus: {Calculate(1):0.##}% of runs.{NewLine}Finished Asphodel: {Calculate(2):0.##}% of runs.{NewLine}Finished Elysium: {Calculate(3):0.##}% of runs.{NewLine}Finished Introspection: {Calculate(4):0.##}% of runs.{NewLine}Won the game: {Calculate(5):0.##}% of runs.{NewLine}{NewLine}Total recorded runs: {stats[^1]}.");
             while (ReadLine() switch
             {
-                string a when a == "1" || a == "F" => SaveStats(0),
-                string b when b == "2" || b == "T" => SaveStats(1),
-                string c when c == "3" || c == "A" => SaveStats(2),
-                string d when d == "4" || d == "E" => SaveStats(3),
-                string e when e == "5" || e == "I" => SaveStats(4),
-                string f when f == "6" || f == "GG" => SaveStats(5),
+                string a when a is "1" || a is "F" => SaveStats(0),
+                string b when b is "2" || b is "T" => SaveStats(1),
+                string c when c is "3" || c is "A" => SaveStats(2),
+                string d when d is "4" || d is "E" => SaveStats(3),
+                string e when e is "5" || e is "I" => SaveStats(4),
+                string f when f is "6" || f is "GG" => SaveStats(5),
                 _ => true
             }) ;
 
